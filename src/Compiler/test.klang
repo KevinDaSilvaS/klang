@@ -1,0 +1,21 @@
+let _v_ := 132 
+let _hi := "Hi " 
+
+let _name     := _readLine
+let _nam     := _readNum
+let _inputInt := _readNum + 3 + 5
+
+show _inputInt * 2
+
+routine 10 :
+    show _hi
+    show _name
+    show _GET_CURR_INDEX
+
+    let _VAR := 3
+    show _VAR
+
+    if _GET_CURR_INDEX > 5 :
+        show "index is greater than 5"
+    ;
+;
