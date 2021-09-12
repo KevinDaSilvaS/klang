@@ -1,7 +1,7 @@
 # klang
-#### Klang is a strong typed, imperative, immutable programming language that transpiles to js. 
-#### Klang stands for not only the pokemon but the group of two words ```K```(Initial of the creator of the language Kevin da Silva) and ```lang``` for the word language.
-#### Inspired by languages like Haskell, Javascript, python and tiger. Klang is written in haskell and can be run on the browser by compiling into js.
+Klang is a strong typed, imperative, immutable programming language that transpiles to js. 
+Klang stands for not only the pokemon but the group of two words ```K```(Initial of the creator of the language Kevin da Silva) and ```lang``` for the word language.
+Inspired by languages like Haskell, Javascript, python and tiger. Klang is written in haskell and can be run on the browser by compiling into js.
 
 ## Features
 
