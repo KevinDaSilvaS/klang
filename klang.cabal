@@ -1,0 +1,74 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2e3e931b7fac0d84b8766c1543ab9a88ca3cfa50cfccb3646c4af6395083b1b1
+
+name:           klang
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/klang#readme>
+homepage:       https://github.com/githubuser/klang#readme
+bug-reports:    https://github.com/githubuser/klang/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/klang
+
+library
+  exposed-modules:
+      Compiler.CodeGenerationKlang
+      Compiler.KlangSets
+      Compiler.LexicalAnalyser
+      Compiler.ParseTree
+      Compiler.RunProject
+      Compiler.SemanticAnalyser
+      Compiler.SintaticAnalyser
+      Compiler.StartCompiler
+      Compiler.SymbolTableKlang
+      Compiler.TokensKlang
+      Lib
+      OutputFormatter.Colors
+      OutputFormatter.FormatMessage
+  other-modules:
+      Paths_klang
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable klang-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_klang
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , klang
+  default-language: Haskell2010
+
+test-suite klang-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_klang
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , klang
+  default-language: Haskell2010
