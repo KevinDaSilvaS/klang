@@ -15,8 +15,8 @@ Inspired by languages like Haskell, Javascript, python and tiger. Klang is writt
 - Output is done by: show _myVariable
 - Input is done like _readLine for string values and _readNum for integers
 - Loops are made using the routine keyword
-- Klang has no {} or () to create block you have to use ':' (to open) and ';'(to close)
-- 
+- Klang has no {} or () to create an execution block you have to use ':' (to open) and ';'(to close)
+
 ### Valid Klang code
 ```
 let _v_ := 132 
