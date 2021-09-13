@@ -78,7 +78,7 @@ for (let _GET_CURR_INDEX = 0; _GET_CURR_INDEX < ( 10 ); _GET_CURR_INDEX++) {
 
 ### Variables
 In klang all variables are constants and must start with the '_'(underscore) symbol, that means you cant change the value of a variable in your program.
-Variables must be followed of: < <let> <variable_name> <assignment_symbol> <value> >
+Variables must be followed of: <let> <let> <variable_name> <assignment_symbol> <value>
 Valid variable Assignment: 
 ```
 let _myVar := 123
@@ -90,7 +90,7 @@ let _myVar := _VARIABLE //outputs an error constants can be declared only once i
 
 ### Ifs
 In klang if statements can contain only one logical expression per if. Ifs in klang support the current comparative operators> >, <, >=, <=, !=, and ==.
-If statements must be like: < <if> <expression_or_value> <comparative_operator> <expression_or_value> <open_block> <your_code> <close_block> >
+If statements must be like: <if> <if> <expression_or_value> <comparative_operator> <expression_or_value> <open_block> <your_code> <close_block>
 Valid if statements: 
 ```
 let _myVar := 123
