@@ -90,7 +90,7 @@ let _myVar := _VARIABLE //outputs an error constants can be declared only once i
 
 ### Ifs
 In klang if statements can contain only one logical expression per if. Ifs in klang support the current comparative operators> >, <, >=, <=, !=, and ==.
-If statements must be like: <if> <expression_or_value> <comparative_operator> <expression_or_value> <open_block> <your_code>  <close_block>
+If statements must be like:  <if> <expression_or_value> <comparative_operator> <expression_or_value> <open_block> <your_code>  <close_block>
 Valid if statements: 
 ```
 let _myVar := 123
@@ -111,7 +111,7 @@ if "hi" == "HI" :
 
 ### Loops
 In klang loops receive an integer as iterator and the current iteration can be accessed by the ```_GET_CURR_INDEX``` reserved variable.
-Loops in klang are like the following: <routine> <integer> <open_block> <your_code>  <close_block>
+Loops in klang are like the following:  <routine> <integer> <open_block> <your_code>  <close_block>
 Valid loops: 
 ```
 let _myIterator := 5
