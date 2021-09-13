@@ -85,6 +85,7 @@ let _myVar := 123
 let _VARIABLE     := "_VARIABLE IS A CONSTANT"
 let _another_one  := _VARIABLE
 let _Calculations := _myVar + 2 * 3
+let _v1 := 123 //outputs an error variable names should start with '_' and then be followed by only [A-Za-z_] characters
 let _myVar := _VARIABLE //outputs an error constants can be declared only once in your program
 ```
 
