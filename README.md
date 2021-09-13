@@ -78,7 +78,7 @@ for (let _GET_CURR_INDEX = 0; _GET_CURR_INDEX < ( 10 ); _GET_CURR_INDEX++) {
 
 ### Variables
 In klang all variables are constants and must start with the '_'(underscore) symbol, that means you cant change the value of a variable in your program.
-Variables must be followed of: <let> <variable_name> <assignment_symbol> <value>
+Variables must be followed of: (<let> <variable_name> <assignment_symbol> <value>)
 Valid variable Assignment: 
 ```
 let _myVar := 123
