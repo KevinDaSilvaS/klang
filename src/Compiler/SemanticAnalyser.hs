@@ -10,6 +10,8 @@ import Compiler.SymbolTableKlang
     ( dropScope, identifierNotAlreadyDefined, getIdentifier )
 
 startSemanticAnalysis symbolTable ((Assign identifier value):xs)
+    | snd identifier == "_GET_CURR_INDEX" = 
+        error "_GET_CURR_INDEX is a reserved variable and cannot be declared"
     | identifierNotAlreadyDefined symbolTable identifier == True =
         startSemanticAnalysis nSymbolTable xs
     where
@@ -29,8 +31,9 @@ startSemanticAnalysis symbolTable ((Routine expr _):xs)
     | otherwise = error "routine only accepts an integer as iterator value"
     where
         nSymbolTable =
-            ("$end_scope", (EmptyToken, ""))
-            :symbolTable
+            [("_GET_CURR_INDEX", (IntegerToken, "1")),
+            ("$end_scope", (EmptyToken, ""))] 
+            ++ symbolTable
 startSemanticAnalysis symbolTable ((Show _ expr):xs) 
     | fst (resolveExpr symbolTable expr) /= EmptyToken = 
         startSemanticAnalysis symbolTable xs
