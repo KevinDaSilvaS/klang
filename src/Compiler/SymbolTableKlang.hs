@@ -6,9 +6,7 @@ import Data.Maybe ( fromJust, isJust )
 
 startSymbolTable :: [([Char], (TokensKlang, [Char]))]
 startSymbolTable = 
-    [("_GET_CURR_INDEX", (IntegerToken, "1")), 
-    ("_readNum",(IntegerToken, "1")), 
-    ("_readLine",(StringToken, ""))]
+    [("_readNum",(IntegerToken, "1")), ("_readLine",(StringToken, ""))]
 
 dropScope :: [([Char], b)] -> [([Char], b)]
 dropScope (("$end_scope", _):xs) = xs
