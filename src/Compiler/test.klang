@@ -2,7 +2,6 @@ let _v_ := 132
 let _hi := "Hi " 
 
 let _name     := _readLine
-let _nam     := _readNum
 let _inputInt := _readNum + 3 + 5
 
 show _inputInt * 2
