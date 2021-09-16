@@ -1,6 +1,8 @@
 module Compiler.ParseTree where
 
 import Compiler.TokensKlang
+    ( TokensKlang(CloseBlockToken, LetToken, ShowToken, IfToken,
+                  RoutineToken) )
 import Compiler.KlangSets
     ( arithmeticOperators, comparativeOperators )
 

@@ -1,7 +1,7 @@
 module Compiler.LexicalAnalyser where
 
 import Compiler.TokensKlang
-import Compiler.KlangSets
+import Compiler.KlangSets ( identifierSet, integers, lineBreaks )
 
 startAutomaton ('l':xs) line col []   =
     letAutomaton xs line (col+1) "l"
