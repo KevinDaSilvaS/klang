@@ -12,7 +12,7 @@ import Compiler.SymbolTableKlang
 startSemanticAnalysis symbolTable ((Assign identifier value):xs)
     | snd identifier == "_GET_CURR_INDEX" = 
         error "_GET_CURR_INDEX is a reserved variable and cannot be declared"
-    | identifierNotAlreadyDefined symbolTable identifier == True =
+    | identifierNotAlreadyDefined symbolTable identifier =
         startSemanticAnalysis nSymbolTable xs
     where
         nSymbolTable =
