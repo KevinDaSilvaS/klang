@@ -20,4 +20,7 @@ data TokensKlang = LetToken        |
                    NotEqlToken     |
                    EqualityToken   |
                    ShowToken       |
+                   FnToken         |
+                   GuardToken      |
+                   ReturnToken     |
                    EmptyToken      deriving (Show, Eq)

@@ -2,9 +2,11 @@ module Main where
 
 import System.Environment ( getArgs )
 import Compiler.StartCompiler ( startCompilation )
+import Compiler.RunProject
         
 main :: IO ()
 main = do
-    args <- getArgs
+    getAllTokens
+    {- args <- getArgs
         
-    startCompilation args
+    startCompilation args -}

@@ -11,7 +11,7 @@ import Compiler.SymbolTableKlang
 
 getAllTokens = do
     --let t = parseResult (startAutomaton "#let $a := 12 + * - / \"oi\"" 1 0 [])
-    let t = getToken "let a := 12 + * - / \"oi\" : ; >= if > < != == <= routine if_ t5" 1 0
+    let t = getToken "fn _safeDiv v d | d == 0 \\-> d | _ \\-> v / d let a := 12 + * - / \"oi\" : ; >= if > < != == <= routine if_ t5" 1 0
     print t
 
 getToken [] l c = []

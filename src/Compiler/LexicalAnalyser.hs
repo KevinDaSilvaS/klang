@@ -11,6 +11,8 @@ startAutomaton ('i':xs) line col []   =
     ifAutomaton xs line (col+1) "i"
 startAutomaton ('r':xs) line col []   =
     routineAutomaton xs line (col+1) "r"
+startAutomaton ('f':xs) line col []   =
+    fnAutomaton xs line (col+1) "f"
 startAutomaton ('+':xs) line col []   =
     ((PlusToken, "+"), line, col, xs)
 startAutomaton ('-':xs) line col []   =
@@ -19,6 +21,10 @@ startAutomaton ('*':xs) line col []   =
     ((MultToken, "*"), line, col, xs)
 startAutomaton ('/':xs) line col []   =
     ((DivisionToken, "/"), line, col, xs)
+startAutomaton ('|':xs) line col []   =
+    ((GuardToken, "|"), line, col, xs)
+startAutomaton ('\\':xs) line col []  =
+    returnAutomaton xs line col "\\"
 startAutomaton (':':xs) line col []   =
     assignAutomaton xs line col ":"
 startAutomaton (';':xs) line col []   =
@@ -46,6 +52,21 @@ startAutomaton _ line col reading     =
     error ("[startAutomaton] Unexpected token in line:"
             ++ show line ++ " col:"
             ++ show col ++ " while reading: " ++ reading)
+
+fnAutomaton ('n':xs) line col "f" = ((FnToken, "fn"), line, col+1, xs)
+fnAutomaton _ line col reading = 
+    error ("[fnAutomaton] Unexpected token in line:"
+            ++ show line ++ " col:"
+            ++ show (col+1) ++ " while reading: " ++ reading)
+
+returnAutomaton ('-':xs) line col "\\" = 
+    letAutomaton xs line (col+1) "\\-"
+returnAutomaton ('>':xs) line col "\\-" = 
+    ((ReturnToken, "\\->"), line, col+1, xs)
+returnAutomaton _ line col reading = 
+    error ("[fnAutomaton] Unexpected token in line:"
+            ++ show line ++ " col:"
+            ++ show (col+1) ++ " while reading: " ++ reading)
 
 letAutomaton ('e':xs) line col "l"  = letAutomaton xs line (col+1) "le"
 letAutomaton ('t':xs) line col "le" = letAutomaton xs line (col+1) "let"
